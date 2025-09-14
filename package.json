@@ -1,0 +1,25 @@
+{
+  "name": "front",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev:frontend": "npm --workspace=apps/frontend run dev",
+    "dev:backend": "npm --workspace=apps/backend run start",
+    "dev": "npm run dev:frontend & npm run dev:backend",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@11.4.2",
+  "workspaces": [
+    "packages/*",
+    "apps/photoAi/frontend"
+  ]
+}
