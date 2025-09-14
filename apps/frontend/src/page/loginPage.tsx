@@ -35,6 +35,11 @@ const handleKakaoLogin = async () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const code = params.get("code");
+    const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+    if (!clientId) {
+    console.error("Google Client ID is missing");
+    return;
+  }
     if (code) {
       console.log('카카오 로그인 성공')
       axios.post("/api/auth/kakao", { code })
@@ -48,6 +53,8 @@ const handleKakaoLogin = async () => {
     if(!code){
       console.log('대기중')
     }
+    
+
   }, [location, navigate]);
 
   return (
