@@ -1,9 +1,8 @@
 import { useAuth } from '@/state/auth.store';
-import { LoginButton } from '@comp/ui';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { useEffect } from 'react';
-import { Link, redirect, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 const LoginPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -46,7 +45,9 @@ const handleKakaoLogin = async () => {
         useAuth.getState().setToken(token);
       })
     }
-
+    if(!code){
+      console.log('대기중')
+    }
   }, [location, navigate]);
 
   return (
