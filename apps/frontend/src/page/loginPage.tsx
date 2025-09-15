@@ -75,7 +75,7 @@ const handleKakaoLogin = async () => {
                     </nav>
                     </span>
           <button
-            type="submit"
+            type="button"
             className="py-3 rounded bg-blue-500 text-white font-semibold text-base hover:bg-blue-600 transition"
           >
             로그인
@@ -95,7 +95,7 @@ const handleKakaoLogin = async () => {
             KAKAO
           </button>
             <button
-            type="submit"
+            type="button"
             className="py-3 rounded bg-blue-500 text-white font-semibold text-base hover:bg-blue-600 transition"
           >
             GITHUB
